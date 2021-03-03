@@ -13,8 +13,12 @@
 
   <body>
     <header class="card-header row p-2">
-      <h1 class="col-11"><%= link_to "Simple Airbnb", flats_path %></h1>
-      <%= link_to "Add flat", new_flat_path, class: "btn btn-outline-info m-2"  %>
+      <h1 class="col-9"><%= link_to "Simple Airbnb", flats_path %></h1>
+      <form action="/flats/find" method="get">
+        <input type="text" name="search" id="" class="form-control">
+        <input type="submit" value="Search" class="btn btn-outline-success">
+        <%= link_to "Add flat", new_flat_path, class: "btn btn-outline-info m-2"  %>
+      </form>
     </header>
     <div class="container">
       <%= yield %>
